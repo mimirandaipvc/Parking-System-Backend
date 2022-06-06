@@ -76,7 +76,7 @@ const getMatriculaUtilizador = async (req, res) => {
 
 //Mudar Matricula - Not Implemented
 const mudarMatriculaUtilizador = async (req, res) => {
-  const { idUtilizador, idMatricula } = req.query;
+  const { idUtilizador, matricula } = req.query;
 
   try {
     let currentMatricula = await Matricula.findOne({
@@ -90,7 +90,7 @@ const mudarMatriculaUtilizador = async (req, res) => {
 
     let newSelectedMatricula = await Matricula.findOne({
       where: {
-        id: idMatricula,
+        matricula: matricula,
       },
     });
 
